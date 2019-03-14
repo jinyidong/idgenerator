@@ -1,7 +1,7 @@
 #!/bin/bash
 appName='IdGenerator'
 
-version=v1.0.0
+version=v1.0.1
 
 echo ---------------remove contanter...------------------
 echo
