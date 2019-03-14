@@ -2,6 +2,6 @@ package common
 
 const (
 	DefaultStep  = 1000
-	DefaultIgPath  = "/ig_default"
-	DefaultChanLength  = 1000
+	DefaultChanCap  = 1000
+	IgRootPath="/idgenerator"
 )
