@@ -1,5 +1,7 @@
 package common
 
-const DefaultStep  = 1000
-
-const DefaultIgPath  = "/ig_default"
+const (
+	DefaultStep  = 1000
+	DefaultIgPath  = "/ig_default"
+	DefaultChanLength  = 1000
+)

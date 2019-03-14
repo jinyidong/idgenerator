@@ -17,7 +17,7 @@ func Generate(ch chan<- int) {
 		return
 	}
 
-	flagBytes,stat,err := zkConn.Get(common.DefaultIgPath)
+	flagBytes,_,err := zkConn.Get(common.DefaultIgPath)
 	if err!=nil {
 		fmt.Println(err)
 		return
@@ -36,7 +36,7 @@ func Generate(ch chan<- int) {
 
 	currentValue:=flag+common.DefaultStep
 
-	_,err=zkConn.Set(common.DefaultIgPath,[]byte(strconv.Itoa(currentValue)),stat.Version+1)
+	_,err=zkConn.Set(common.DefaultIgPath,[]byte(strconv.Itoa(currentValue)),-1)
 
 	if err!=nil {
 		fmt.Println(err)
