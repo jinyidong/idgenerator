@@ -1,3 +1,3 @@
-FROM harbor.suiyi.com.cn/monitor/alpine:latest
-ADD IdGenerator /
-CMD ["/IdGenerator"]
+FROM alpine:latest
+ADD idgenerator /
+CMD ["/idgenerator"]
