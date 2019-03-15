@@ -25,7 +25,7 @@ func init()  {
 	}
 
 	go func() {//单独起协程，向相关channel生产数据，是否需要加锁
-		t := time.NewTicker(time.Second)
+		t := time.NewTicker(5*time.Second)
 		for t:=range t.C {
 			for biz,ch:=range bizChanMap.Map{
 				go generate(biz,ch,t.String())
@@ -34,7 +34,7 @@ func init()  {
 	}()
 }
 
-func generate(biz string,ch chan int64,timeNow string)  {
+func generate(biz string,ch chan<- int64,timeNow string)  {
 	if len(ch)> cap(ch)/3{
 		return
 	}
